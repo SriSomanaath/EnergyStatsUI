@@ -1,0 +1,258 @@
+html {
+    font-size: 10px;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    font-weight: 300;
+    color: #656565;
+  }
+  
+  .box {
+    width: 345px;
+    max-width: 90%;
+    padding: 2rem;
+    display: block;
+    border-radius: 1.5rem;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .meter {
+    width: 188px;
+    margin: 30px auto 0;
+    position: relative;
+  }
+  
+  .meter-hand {
+    position: absolute;
+    left: 45%;
+    bottom: 6px;
+    margin-left: -5px;
+    z-index: 1;
+    transition: all 2s ease-in-out;
+    transform-origin: 94% 48%;
+  }
+  
+  .speed {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  #speed {
+    min-width: 300px;
+    display: inline-block;
+  }
+  
+  .unit {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #bbe697;
+  }
+  
+  .meter .num {
+    font-size: 1rem;
+    font-weight: 600;
+    position: absolute;
+  }
+  
+  #num_1 {
+    left: 25px;
+    top: 80px;
+  }
+  
+  #num_2 {
+    left: 37px;
+    top: 56px;
+  }
+  
+  #num_3 {
+    left: 55px;
+    top: 35px;
+  }
+  
+  #num_4 {
+    left: 87px;
+    top: 25px;
+  }
+  
+  #num_5 {
+    right: 55px;
+    top: 35px;
+  }
+  
+  #num_6 {
+    right: 37px;
+    top: 56px;
+  }
+  
+  #num_7 {
+    right: 25px;
+    top: 80px;
+  }
+  
+  /* RESET STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  .chart-skills {
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .chart-skills *,
+  .chart-skills::before {
+    box-sizing: border-box;
+  }
+  
+  /* CHART-SKILLS STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  .chart-skills {
+    position: relative;
+    width: 250px;
+    height: 125px;
+    overflow: hidden;
+  }
+  
+  .chart-skills::before,
+  .chart-skills::after {
+    position: absolute;
+  }
+  
+  .chart-skills::before {
+    content: '';
+    width: inherit;
+    height: inherit;
+    border: 45px solid rgba(211, 211, 211, .3);
+    border-bottom: none;
+    border-top-left-radius: 175px;
+    border-top-right-radius: 175px;
+  }
+  
+  .chart-skills::after {
+    content: '';
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: cadetblue;
+  }
+  
+  .chart-skills li {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border: 45px solid;
+    border-top: none;
+    border-bottom-left-radius: 175px;
+    border-bottom-right-radius: 175px;
+    transform-origin: 50% 0;
+    animation-fill-mode: forwards;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+  
+  .chart-skills li:nth-child(1) {
+    z-index: 4;
+    border-color: #ED7E3D;
+    animation-name: rotate-one;
+  }
+  
+  .chart-skills li:nth-child(2) {
+    z-index: 3;
+    border-color: #F0D440;
+    animation-name: rotate-two;
+    animation-delay: .4s;
+  }
+  
+  .chart-skills li:nth-child(3) {
+    z-index: 2;
+    border-color: #8EC34A;
+    animation-name: rotate-three;
+    animation-delay: .8s;
+  }
+  
+  .chart-skills li:nth-child(4) {
+    z-index: 1;
+    border-color: #29B151;
+    animation-name: rotate-four;
+    animation-delay: 1.2s;
+  }
+  
+  /* ANIMATIONS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  @keyframes rotate-one {
+    100% {
+      transform: rotate(45deg);
+      /**
+       * 12% => 21.6deg
+       */
+    }
+  }
+  
+  @keyframes rotate-two {
+    0% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(90deg);
+      /**
+       * 32% => 57.6deg 
+       * 57.6 + 21.6 => 79.2deg
+       */
+    }
+  }
+  
+  @keyframes rotate-three {
+    0% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(135deg);
+      /**
+       * 34% => 61.2deg 
+       * 61.2 + 79.2 => 140.4deg
+       */
+    }
+  }
+  
+  @keyframes rotate-four {
+    0% {
+      transform: rotate(135deg);
+    }
+    100% {
+      transform: rotate(180deg);
+      /**
+       * 22% => 39.6deg  
+       * 140.4 + 39.6 => 180deg
+       */
+    }
+  }
+  
+  .chart-skills {
+    position: relative;
+  }
+  /* .indicator{
+    position: absolute;
+    left: 50%;
+    top: 3%;
+    z-index: 1000;
+  } */
+  .pointer-img {
+    width: 27px; /* Adjust the width of the pointer image */
+    height: 88px; /* Maintain the aspect ratio */
+    transform-origin: bottom center;
+    transform: rotate(10deg); /* Adjust the rotation degree */
+  }
+  #chartContainer {
+    height: 400px;
+  }
